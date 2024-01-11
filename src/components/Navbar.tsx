@@ -11,22 +11,54 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-center">
-        <div className="nav-header">
+    <nav
+      className="fixed top-0 left-0 w-full
+     py-3 px-8 bg-offWhite z-1"
+    >
+      <div
+        className="nav-center md:max-w-1170px md:my-0
+       md:mx-auto md:flex"
+      >
+        <div className="flex justify-between">
           <Link to="/">
             <img src={logo} alt="Beach Resort" />
           </Link>
-          <button type="button" className="nav-btn" onClick={handleToggle}>
-            <FaAlignRight className="nav-icon" />
+          <button
+            type="button"
+            className="bg-transparent border-none cursor-pointer
+            outline-none md:hidden"
+            onClick={handleToggle}
+          >
+            <FaAlignRight className="text-2xl text-primaryColor" />
           </button>
         </div>
-        <ul className={isOpen ? "nav-links show-nav" : "nav-links"}>
+        <ul
+          className={`h-0 overflow-hidden transition-mainTransition
+          list-none md:h-auto md:flex md:ml-1 ${isOpen ? "h-24" : ""}`}
+        >
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className="block no-underline py-4 px-0
+            text-mainBlack transition-mainTransition text-center
+            text-base font-semibold tracking-mainSpacing
+            hover:text-primaryColor md:my-0 md:mx-4 md:py-2
+             md:px-0"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/rooms">Rooms</Link>
+            <Link
+              to="/rooms"
+              className="block no-underline py-4 px-0
+            text-mainBlack transition-mainTransition text-center
+            text-base font-semibold tracking-mainSpacing
+            hover:text-primaryColor md:my-0 md:mx-4 md:py-2
+             md:px-0"
+            >
+              Rooms
+            </Link>
           </li>
         </ul>
       </div>
