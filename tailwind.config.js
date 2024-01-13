@@ -1,7 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xsm: "576px",
+      xlg: "992px",
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
         primaryColor: "var(--primaryColor)",
@@ -33,6 +40,10 @@ module.exports = {
       width: {
         "95vw": "95vw",
       },
+      minHeight: {
+        "calc(100vh-66px)": "calc(100vh - 66px)",
+      },
+
     },
   },
   plugins: [],
