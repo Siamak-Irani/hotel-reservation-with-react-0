@@ -11,13 +11,23 @@ const FeaturedRooms = () => {
     return <Room key={room.id} room={room} />;
   });
   return (
-    <section className="featured-rooms">
+    <section className="py-20 px-0">
       <Title title="featured rooms" />
-      <div className="featured-rooms-center">
+      <div
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+          gridRowGap: "2rem",
+          gridColumnGap: "40px",
+        }}
+        className="w-80vw my-0 mx-auto grid
+         md:w-90vw xlg:grid-cols-repeat(auto-fit, minmax(330px, 1fr))
+          xlg:shadow-lightShadow
+        xlg:max-w-1170px"
+      >
         {loading ? <Loading /> : roomElements}
       </div>
     </section>
   );
 };
 
-export default FeaturedRooms
+export default FeaturedRooms;

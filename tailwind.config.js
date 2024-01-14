@@ -39,13 +39,16 @@ module.exports = {
       },
       width: {
         "95vw": "95vw",
-        "90vw":"90vw"
-
+        "90vw": "90vw",
+        "80vw": "80vw",
       },
       minHeight: {
         "calc(100vh-66px)": "calc(100vh - 66px)",
       },
-
+      gridTemplateColumns: {
+        "repeat(auto-fit, minmax(330px, 1fr))":
+          "repeat(auto-fit, minmax(330px, 1fr))",
+      },
     },
   },
   plugins: [],

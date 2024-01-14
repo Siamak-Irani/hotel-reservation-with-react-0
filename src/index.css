@@ -28,3 +28,14 @@ code {
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
+
+.img-container:hover img {
+  opacity: 0.3;
+}
+.img-container:hover .price-top {
+  opacity: 0;
+}
+
+.img-container:hover .room-link {
+  transform: translate(-50%, -50%) scale(1);
+}
