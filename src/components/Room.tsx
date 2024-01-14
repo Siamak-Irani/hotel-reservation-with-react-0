@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImg from "../images/room-1.jpeg";
+import defaultImg from "../files/images/room-1.jpeg";
 import { memo } from "react";
-import { Room } from "../lib/type";
+import { Room as RoomType } from "../lib/type";
 
 type RoomProps = {
-  room: Room;
+  room: RoomType;
 };
 
 const Room = memo(({ room }: RoomProps) => {

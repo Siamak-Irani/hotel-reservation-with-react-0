@@ -9,9 +9,15 @@ type StoreContext = {
   featuredRooms: Room[];
 };
 
-const Store = createContext({});
+const Store = createContext({} as StoreContext);
 
-const ContextProvider = () => {
+type StoreContextProviderProps = {
+  children: React.ReactNode;
+};
+
+export const StoreContextProvider = ({
+  children,
+}: StoreContextProviderProps) => {
   const [state, setState] = useState<StoreContext>({
     loading: true,
     featuredRooms: [],
@@ -26,5 +32,7 @@ const ContextProvider = () => {
     });
   }, []);
 
-  return <Store.Provider value={state}></Store.Provider>;
+  return <Store.Provider value={state}>{children}</Store.Provider>;
 };
+
+export default Store;
