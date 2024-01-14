@@ -39,6 +39,8 @@ module.exports = {
       },
       width: {
         "95vw": "95vw",
+        "90vw":"90vw"
+
       },
       minHeight: {
         "calc(100vh-66px)": "calc(100vh - 66px)",
