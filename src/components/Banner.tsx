@@ -3,7 +3,7 @@ import React from "react";
 type BannerProps = {
   children:React.ReactNode;
   title:string,
-  subtitle:string
+  subtitle?:string
 }
 
 const Banner = ({ children, title, subtitle }:BannerProps) => {
