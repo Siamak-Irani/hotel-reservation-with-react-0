@@ -23,6 +23,7 @@ export type StoreContext = {
       | React.ChangeEvent<HTMLSelectElement>
       | React.ChangeEvent<HTMLInputElement>
   ) => void;
+  getRoom: (slug: string | undefined) => Room | undefined;
 };
 
 const Store = createContext({} as StoreContext);
@@ -34,6 +35,12 @@ type StoreContextProviderProps = {
 export const StoreContextProvider = ({
   children,
 }: StoreContextProviderProps) => {
+  const rooms: Room[] = formatData(items);
+  const featuredRooms = rooms.filter((room: Room) => room.featured === true);
+
+  const maxRoomPrice = Math.max(...rooms.map((item) => item.price));
+  const maxRoomSize = Math.max(...rooms.map((item) => item.size));
+
   const handleChange = (
     event:
       | React.ChangeEvent<HTMLSelectElement>
@@ -51,6 +58,13 @@ export const StoreContextProvider = ({
       [name]: value,
     }));
   };
+
+  const getRoom = (slug: string | undefined): Room | undefined => {
+    let tempRooms = [...rooms];
+    const room = tempRooms.find((room) => room.slug === slug);
+    return room;
+  };
+
   const [state, setState] = useState<StoreContext>({
     loading: true,
     featuredRooms: [],
@@ -66,15 +80,10 @@ export const StoreContextProvider = ({
     breakfast: false,
     pets: false,
     handleChange,
+    getRoom,
   });
 
   useEffect(() => {
-    let rooms: Room[] = formatData(items);
-    let featuredRooms = rooms.filter((room: Room) => room.featured === true);
-
-    let maxPrice = Math.max(...rooms.map((item) => item.price));
-    let maxSize = Math.max(...rooms.map((item) => item.size));
-
     setState((prev) => {
       return {
         ...prev,
@@ -82,9 +91,9 @@ export const StoreContextProvider = ({
         sortedRooms: rooms,
         featuredRooms,
         loading: false,
-        price: maxPrice,
-        maxPrice,
-        maxSize,
+        price: maxRoomPrice,
+        maxPrice: maxRoomPrice,
+        maxSize: maxRoomSize,
       };
     });
   }, []);

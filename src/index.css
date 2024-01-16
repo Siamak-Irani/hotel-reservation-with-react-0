@@ -39,3 +39,11 @@ code {
 .img-container:hover .room-link {
   transform: translate(-50%, -50%) scale(1);
 }
+
+@media screen and (min-width: 992px) {
+  .single-room-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
