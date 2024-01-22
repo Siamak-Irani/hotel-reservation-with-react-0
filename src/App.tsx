@@ -5,10 +5,12 @@ import RootLayout from "./pages/RootLayout";
 import HomePage from "./pages/HomePage";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },

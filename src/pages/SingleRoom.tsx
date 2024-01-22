@@ -1,9 +1,10 @@
 import React, { Component, useContext, useState } from "react";
 import defBcg from "../files/images/room-1.jpeg";
 import Banner from "../components/Banner";
-import { Link, useParams } from "react-router-dom";
+import { Link, json, useParams } from "react-router-dom";
 import StyledHero from "../components/StyledHero";
 import Store from "../components/context";
+import ErrorPage from "./ErrorPage";
 
 const SingleRoom = () => {
   const [defaultBcg, setDefaultBcg] = useState(defBcg);
@@ -12,16 +13,22 @@ const SingleRoom = () => {
 
   const room = getRoom(params.slug);
 
+  if (!room) return <ErrorPage status={404} msg="This room was not found." />
+
   if (!room) {
     return (
-      <div className="error">
+      <div className="text-center uppercase my-8 mx-0">
         <h3> no such room could be found...</h3>
-        <Link to="/rooms" className="btn-primary">
+        <Link to="/rooms" className="inline-block no-underline tracking-mainSpacing
+        text-mainBlack bg-primaryColor py-[.4rem] px-[.9rem]
+        border-2 border-solid border-primaryColor transition-mainTransition
+        uppercase cursor-pointer hover:bg-transparent hover:text-primaryColor">
           back to rooms
         </Link>
       </div>
     );
   }
+
   const {
     name,
     description,
@@ -102,7 +109,7 @@ const SingleRoom = () => {
         >
           {extras.map((item, index) => (
             <li key={index}>- {item}</li>
-          ))} 
+          ))}
         </ul>
       </section>
     </>

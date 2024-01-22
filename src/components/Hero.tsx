@@ -3,11 +3,12 @@ import defaultBcg from "../files/images/defaultBcg.jpeg";
 type HeroProps = {
   children: React.ReactNode;
   hero?: string;
-};
+  style: React.CSSProperties
+}
 
-const Hero = ({ children, hero }: HeroProps) => {
+const Hero = ({ children, hero, style }: HeroProps) => {
   return (
-    <header style={{ backgroundImage: "url(" + defaultBcg + ")" }} className={hero}>
+    <header style={ style } className={hero}>
       {children}
     </header>
   );
@@ -15,8 +16,9 @@ const Hero = ({ children, hero }: HeroProps) => {
 export default Hero;
 
 Hero.defaultProps = {
-  hero: `min-h-calc(100vh-66px)
-    bg-center bg-cover
+  hero: `bg-center bg-cover min-h-[calc(100vh)]
     bg-no-repeat flex items-center
     justify-center`,
+  style: { backgroundImage: `url(${defaultBcg})` },
+  // backggroundImage: defaultBcg,
 };
