@@ -14,7 +14,7 @@ const Rooms = () => {
     bg-no-repeat flex items-center
     justify-center"
       >
-        <Banner title="our rooms">
+        <Banner title="اتاق های ما">
           <Link
             to="/"
             className="inline-block no-underline tracking-mainSpacing
@@ -22,7 +22,7 @@ const Rooms = () => {
           border-primaryColor transition-mainTransition uppercase cursor-pointer
           hover:bg-transparent hover:text-primaryColor"
           >
-            return home
+            بازگشت به خانه
           </Link>
         </Banner>
       </Hero>

@@ -47,7 +47,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
   ));
   return (
     <section className="py-2- px-0">
-      <Title title="search rooms" />
+      <Title title="جستجوی اتاق" />
       <form
         style={{
           gridTemplateColumns: "repeat(auto-fit, minmax(202px, 1fr))",
@@ -60,7 +60,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
         {/* select type */}
         <div className="capitalize">
           <label className="block tracking-mainSpacing mb-2" htmlFor="type">
-            room type
+            نوع اتاق
           </label>
           <select
             name="type"
@@ -76,7 +76,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
         {/* guests  */}
         <div className="capitalize">
           <label className="block tracking-mainSpacing mb-2" htmlFor="capacity">
-            Guests
+            مهمان ها
           </label>
           <select
             name="capacity"
@@ -92,7 +92,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
         {/* room price */}
         <div className="capitalize">
           <label className="block tracking-mainSpacing mb-2" htmlFor="price">
-            room price ${price}
+            قیمت اتاق{price}
           </label>
           <input
             type="range"
@@ -109,7 +109,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
         {/* size */}
         <div className="capitalize">
           <label className="block tracking-mainSpacing mb-2" htmlFor="price">
-            room size
+            ظرفیت اتاق
           </label>
           <div className="flex">
             <input
@@ -146,7 +146,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
               inline-block text-sm ml-[0.5rem]"
               htmlFor="breakfast"
             >
-              breakfast
+              صبحانه
             </label>
           </div>
           <div className="single-extra">
@@ -161,7 +161,7 @@ const RoomsFilter = ({ rooms }: RoomsFilterProps) => {
               inline-block text-sm ml-[0.5rem]"
               htmlFor="breakfast"
             >
-              pets
+              حیوانات خانگی
             </label>
           </div>
         </div>

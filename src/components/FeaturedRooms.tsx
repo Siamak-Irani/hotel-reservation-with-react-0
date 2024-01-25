@@ -12,7 +12,7 @@ const FeaturedRooms = () => {
   });
   return (
     <section className="py-20 px-0">
-      <Title title="featured rooms" />
+      <Title title="امکانات اتاق ها" />
       <div
         style={{
           gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",

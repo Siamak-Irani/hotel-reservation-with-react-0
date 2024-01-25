@@ -29,7 +29,7 @@ const ErrorPage = ({ status, msg }: ErrorPageProps) => {
       <Hero>
         <Banner title={errorStatus.toString()} subtitle={errorMessage}>
           <Link to="/" className="">
-            Return home
+           بازگشت به خانه
           </Link>
         </Banner>
       </Hero>

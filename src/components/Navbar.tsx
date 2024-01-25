@@ -45,7 +45,7 @@ const Navbar = () => {
             hover:text-primaryColor md:my-0 md:mx-4 md:py-2
              md:px-0"
             >
-              Home
+              خانه
             </Link>
           </li>
           <li>
@@ -57,7 +57,7 @@ const Navbar = () => {
             hover:text-primaryColor md:my-0 md:mx-4 md:py-2
              md:px-0"
             >
-              Rooms
+              اتاق ها
             </Link>
           </li>
         </ul>

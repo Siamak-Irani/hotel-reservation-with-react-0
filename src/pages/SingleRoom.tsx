@@ -13,17 +13,17 @@ const SingleRoom = () => {
 
   const room = getRoom(params.slug);
 
-  if (!room) return <ErrorPage status={404} msg="This room was not found." />
+  if (!room) return <ErrorPage status={404} msg="این اتاق یافت نشد!" />
 
   if (!room) {
     return (
       <div className="text-center uppercase my-8 mx-0">
-        <h3> no such room could be found...</h3>
+        <h3>اتاق مورد نظر یافت نشد</h3>
         <Link to="/rooms" className="inline-block no-underline tracking-mainSpacing
         text-mainBlack bg-primaryColor py-[.4rem] px-[.9rem]
         border-2 border-solid border-primaryColor transition-mainTransition
         uppercase cursor-pointer hover:bg-transparent hover:text-primaryColor">
-          back to rooms
+          بازگشت به صفحه اتاق‌ها
         </Link>
       </div>
     );
@@ -45,9 +45,9 @@ const SingleRoom = () => {
   return (
     <>
       <StyledHero img={images[0] || defaultBcg}>
-        <Banner title={`${name} room`}>
+        <Banner title={`اتاق ${name}`}>
           <Link to="/rooms" className="btn-primary">
-            back to rooms
+            بازگشت به خانه
           </Link>
         </Banner>
       </StyledHero>
@@ -67,22 +67,22 @@ const SingleRoom = () => {
         <div
           style={{ gridTemplateColumns: "1fr" }}
           className="single-room-info w-[80vw] grid
-        my-4 mx-0 xlg:w-[95vw] xlg:max-w-[1170px]"
+        my-4 mx-auto xlg:w-[95vw] xlg:max-w-[1170px]"
         >
           <article className="desc my-4 mx-0">
-            <h3 className="capitalize tracking-mainSpacing">details</h3>
+            <h3 className="capitalize tracking-mainSpacing">جزئیات</h3>
             <p className="leading-6">{description}</p>
           </article>
           <article className="info my-4 mx-0 xlg:pl-[3rem]">
-            <h3 className="capitalize tracking-mainSpacing">info</h3>
+            <h3 className="capitalize tracking-mainSpacing">اطلاعات</h3>
             <h6 className="capitalize tracking-mainSpacing font-light">
-              price : ${price}
+              قیمت : ${price}
             </h6>
             <h6 className="capitalize tracking-mainSpacing font-light">
-              size : {size} SQFT
+              اندازه : {size} SQFT
             </h6>
             <h6 className="capitalize tracking-mainSpacing font-light">
-              max capacity :
+              حداکثر ظرفیت :
               {capacity > 1 ? `${capacity} people` : `${capacity} person`}
             </h6>
             <h6 className="capitalize tracking-mainSpacing font-light">
@@ -95,10 +95,10 @@ const SingleRoom = () => {
         </div>
       </section>
       <section
-        className="w-[80vw] mx-auot mt-0 mb-12
+        className="w-[80vw] mx-auto mt-0 mb-12
        xlg:w-[95vw] xlg:max-w-[1170px]"
       >
-        <h6 className="capitalize tracking-mainSpacing">extras </h6>
+        <h6 className="capitalize tracking-mainSpacing">امکانات اضافه </h6>
         <ul
           style={{
             gridTemplateColumns: " repeat(auto-fit, minmax(330px, 1fr))",

@@ -13,7 +13,7 @@ const RoomsList = ({ rooms }: RoomsListProps) => {
         className="text-center capitalize my-8 mx-0
       p-4 tracking-mainSpacing"
       >
-        <h3>unfortunately no rooms matched your search parameters</h3>
+        <h3>متاسفانه اتاق مورد نظر شما یافت نشد</h3>
       </div>
     );
   }

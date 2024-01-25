@@ -19,12 +19,12 @@ const Room = memo(({ room }: RoomProps) => {
         <div className="price-top absolute top-0 left-0 bg-black/80 text-mainWhite
         pt-1 px-2.5 pb-2 rounded-br-[1rem] text-[0.5rem] text-center transition-mainTransition">
           <h6 className="mb-0 text-base font-light tracking-mainSpacing">${price}</h6>
-          <p>per night</p>
+          <p>هر شب</p>
         </div>
         <Link to={`/rooms/${slug}`} className="btn-primary room-link
         absolute top-1/2 left-1/2 scale-0 transition-all
           duration-300">
-          features
+          امکانات
         </Link>
       </div>
       <p className="bg-darkGrey capitalize py-2 px -0 text-center

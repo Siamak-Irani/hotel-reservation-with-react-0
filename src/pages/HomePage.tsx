@@ -9,11 +9,11 @@ const HomePage = () => {
     <>
       <Hero>
         <Banner
-          title="luxurious rooms"
-          subtitle="deluxe rooms starting at $299"
+          title="اتاق های مجلل"
+          subtitle="اتاق های لوکس از 299 دلار شروع می شود"
         >
           <Link to="/rooms" className="btn-primary">
-            our rooms
+            اتاق های ما
           </Link>
         </Banner>
       </Hero>
